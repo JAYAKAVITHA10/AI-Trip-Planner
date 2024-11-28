@@ -88,14 +88,15 @@ function CreateTrip() {
     }
 
     if (
-      (formData?.noOfDays > 5 && formData?.location) ||
+      !formData?.location ||
+      !formData?.noOfDays ||
       !formData?.budget ||
       !formData?.travelers
     ) {
       toast("Please fill all details");
-
       return;
     }
+
     setLoading(true);
 
     const FINAL_PROMPT = AI_PROMPT.replace(
@@ -191,7 +192,7 @@ function CreateTrip() {
           <Input
             placeholder={"Ex.3"}
             type="number"
-            onChange={(e) => handleInputChanges("noOfdays", e.target.value)}
+            onChange={(e) => handleInputChanges("noOfDays", e.target.value)}
           />
         </div>
 
