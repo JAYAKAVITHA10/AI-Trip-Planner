@@ -19,7 +19,7 @@ function PlacesToVisit({ trip }) {
                 <ul>
                   {places.map((place, placeIndex) => (
                     <li key={placeIndex} className="mb-4">
-                      <div className="my-3">
+                      <div className="mt-5">
                         {/* <h3 className="font-medium text-lg">{place.placeName}</h3>
                       <p className="text-sm text-gray-600">
                         {place.placeDetails}
